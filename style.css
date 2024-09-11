@@ -1,0 +1,99 @@
+/* Aplica el modelo de caja de borde a todos los elementos HTML, incluyendo el padding y el borde en el ancho y alto total del elemento. */
+* {
+    box-sizing: border-box;
+}
+
+/* Establece la fuente predeterminada de todo el cuerpo del documento a Arial y elimina los márgenes predeterminados. */
+body {
+    font-family: Arial;
+    margin: 0;
+}
+
+/* Estilos para la cabecera: se usa flexbox para alinear los elementos horizontalmente, el texto se centra, y se define un color de fondo gris con texto en color blanco. */
+.header {
+    display: flex;
+    text-align: center;
+    background-color: gray;
+    color: white;
+}
+
+/* Estilos para las imágenes en la cabecera: se asigna un 25% del espacio disponible a las imágenes y se define su ancho. */
+.fakeim {
+    flex: 25%;
+    width: 40px;
+}
+
+/* Estilos para el nombre en la cabecera: ocupa el 75% del espacio restante, centra el texto verticalmente y horizontalmente, y aumenta el tamaño de fuente a 30px. */
+.name {
+    flex: 75%;
+    text-align: center;
+    padding-top: 60px;
+    font-size: 30px;
+}
+
+/* Define el contenedor principal del cuerpo para usar flexbox, permitiendo que los elementos internos se ajusten según el tamaño de la pantalla. */
+.cuerpo {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+/* Estilos para la sección izquierda del cuerpo: ocupa el 30% del espacio, con un fondo gris claro, padding, y se comporta como un bloque en línea. */
+.left {
+    flex: 30%;
+    background-color: rgb(211, 211, 211);
+    padding: 20px;
+    display: inline-block;
+}
+
+/* Estilos para los encabezados h2, añadiendo una línea divisoria debajo de cada uno. */
+h2 {
+    border-bottom: 1px solid black;
+}
+
+/* Estilos para la sección derecha del cuerpo: ocupa el 70% del espacio, con fondo blanco, y padding. */
+.right {
+    flex: 70%;
+    background-color: white;
+    padding: 20px;
+}
+
+/* Estilos específicos para elementos no detallados en la pregunta, pero aparentemente destinados a ajustar el padding y el color de fondo. */
+#grid-1 {
+    background-color: #F2F2F2;
+    padding-top: 10px;
+    padding-right: 20px;
+    padding-left: 40px;
+    padding-bottom: 20px;
+}
+
+/* Estilos para iconos en el documento, permitiendo que floten a la izquierda y definiendo dimensiones específicas y un padding superior. */
+.icon {
+    float: left;
+    padding-top: 5px;
+    width: 35px;
+    height: 23px;
+}
+
+/* Estilos adicionales para otros elementos no especificados en el HTML mostrado. */
+#grid-2 {
+    background-color: #FFFFFF;
+    padding-top: 10px;
+    padding-right: 5px;
+    padding-left: 30px;
+}
+.otro {
+    display: inline-block;
+}
+#plomo {
+    color: #a5a5a5;
+}
+#esp {
+    color: #FFFFFF;
+}
+
+/* Regla de medios para pantallas con un ancho máximo de 700px, ajustando la dirección del flex a columna, lo que apila los elementos verticalmente en pantallas más pequeñas. */
+@media screen and (max-width: 700px) {
+    .cuerpo {   
+      flex-direction: column;
+    }
+}
