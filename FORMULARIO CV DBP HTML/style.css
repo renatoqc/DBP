@@ -1,0 +1,57 @@
+body {
+    font-family: Arial, sans-serif; 
+    background-color: rgb(95, 164, 167); 
+    margin: 50px;
+}
+
+form#formulario {
+    max-width: 600px; /* ancho */
+    margin: 20px auto; /* Centra el formulario*/
+    padding: 20px; 
+    background-color: #f4f4f4; /* fondo */
+    border-radius: 8px; 
+}
+
+/* Estilo para etiquetas, entradas, selecciones, áreas de texto, párrafos y botones dentro del formulario */
+form#formulario label,
+form#formulario input,
+form#formulario select,
+form#formulario textarea,
+form#formulario p,
+form#formulario button {
+    background-color: #fff; 
+    padding: 10px; 
+    margin-bottom: 10px; /* Margen inferior*/
+    border-radius: 5px; /* Bordes*/
+    display: block; /* Hace que cada elemento ocupe su propia línea */
+}
+
+/* Estilo específico para campos de texto, fechas, selecciones y áreas de texto dentro del formulario */
+form#formulario input[type="text"],
+form#formulario input[type="date"],
+form#formulario select,
+form#formulario textarea {
+    margin-left: 20px; 
+    width: calc(100% - 40px); 
+    box-sizing: border-box; /* ancho y altura */
+}
+
+/* Estilo para botones de radio y casillas de verificación que permite una presentación en línea */
+form#formulario input[type="radio"],
+form#formulario input[type="checkbox"] {
+    display: inline-block; 
+    width: auto; /* El ancho*/
+    margin-left: 20px; /* Margen izquierdo */
+}
+
+/* Estilo específico para el botón dentro del formulario */
+form#formulario button {
+    background-color: #C8A2C8; 
+    color: white; /* Texto  */
+    border: none; /* Sin bordes*/
+    cursor: pointer; /* Cambia el cursor */
+    padding: 10px 20px; /* Espaciado interno para hacer el botón más grande */
+    text-transform: uppercase; /* Texto en mayúsculas*/
+    display: inline-block; 
+    margin-left: 20px; 
+}
