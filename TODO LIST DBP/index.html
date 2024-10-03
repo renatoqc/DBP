@@ -1,0 +1,69 @@
+<!DOCTYPE HTML>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>TO-DO LIST</title>
+    <link rel="stylesheet" href="style.css">
+    <script>
+      document.addEventListener('DOMContentLoaded', () => {
+        document.querySelector('#new-task').onsubmit = () => {
+          const cb = document.createElement("INPUT");
+          cb.setAttribute("type", "checkbox");
+
+          // Crear el elemento li y agregar el checkbox
+          const li = document.createElement('li');
+          li.appendChild(cb);
+
+          // Agregar el texto de la tarea
+          const taskText = document.createTextNode(document.querySelector('#task').value);
+          li.appendChild(taskText);
+
+          // Crear el botón "X" para eliminar la tarea
+          const removeBtn = document.createElement('button');
+          removeBtn.innerHTML = 'X';
+          removeBtn.className = 'remove';  
+          li.appendChild(removeBtn);
+
+          cb.addEventListener('change', function() {
+            li.style.textDecoration = this.checked ? "line-through" : "none";
+          });
+
+          removeBtn.addEventListener('click', function() {
+            li.remove();
+          });
+
+          document.querySelector('#tasks').append(li);
+          document.querySelector('#task').value = '';
+
+          return false;
+        };
+
+        // Función para marcar todas las tareas como completadas
+        document.querySelector('#mark-all').addEventListener('click', () => {
+          const tasks = document.querySelectorAll('#tasks li input[type="checkbox"]');
+          tasks.forEach(task => {
+            task.checked = true;
+            task.parentElement.style.textDecoration = "line-through";
+          });
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <div class="container">
+      <p>Computer Science</p>
+      <div class="title">
+        <h1>Tasks</h1>|
+        
+      </div>
+      <form id="new-task">
+        <input id="task" autocomplete="off" autofocus placeholder="New Task" type="text">
+        <input type="submit">
+      </form>
+      <button id="mark-all">Marcar Todas</button> <!-- Botón para marcar todas las tareas -->
+      <ol id="tasks">
+      </ol>
+    </div>
+  </body>
+</html>
